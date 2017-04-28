@@ -1,0 +1,1295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+ <head>
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Ug8FUldADAsAVVVb"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(3),t(4),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:6,4:5,5:20,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:20,2:21,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:21,2:20,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:21,2:20,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:21,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],10:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","trackUserAction","finished","traceEvent","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:19,2:20,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&u&&u.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=l.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-536.min.js"},l=e.exports={offset:i(),origin:p,features:{}};u[f]?(u[f]("DOMContentLoaded",o,!1),c[f]("load",n,!1)):(u[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:19,2:10,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],19:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],20:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],21:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:20,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script> 
+  <title>
+VMware Jobs - Sr MTS QE in Palo Alto, California, United States
+</title> 
+  <meta name="msvalidate.01" content="B9E4E5CC00BB58B097061E7DBFC6FA6B"> 
+  <link rel="stylesheet" type="text/css" href="/style/style.css?version=4626-780"> 
+  <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/styleIE.css">
+<![endif]--> 
+  <style type="text/css">
+/* Main CSS */
+body {
+    background-color: #1f1f21 !important;
+    color: #666666;
+}
+
+
+</style> 
+  <script type="text/javascript" src="//d2e48ltfsb5exy.cloudfront.net/framework/v2/js/code/jquery-1.7.1.js"></script> 
+  <script type="text/javascript" src="//d2e48ltfsb5exy.cloudfront.net/framework/v2/js/code/jquery-ui-1.8.17.custom.min.js"></script> 
+  <script type="text/javascript" src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/def.ui.microsite.141-20.js"></script> 
+  <script type="text/javascript" src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/underscore-1.3.1.min.js"></script> 
+  <script type="text/javascript" src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/jquery.placeholder.js"></script> 
+  <style>
+
+    </style> 
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+  <script type="text/javascript">
+      var pager_num_items = 9;
+    </script> 
+  <script type="text/javascript" src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/pager.160-29.js"></script> 
+  <!-- Google Analytics --> 
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// variable to track if this is a standard or error (404/500) page
+var error_page = false;
+// pageview is handled in the wide footer to allow for page and error page
+// differentation
+
+ga('create', 'UA-16316580-1', 'auto');
+ga('set', 'dimension1', '161-28');    
+
+ga('set', 'dimension2', 'Default (10)');
+
+
+
+ga('create', 'UA-26313745-43', 'auto', {'name': 'g432'});
+ga('g432.set', 'dimension1', '161-28', 2);    
+
+ga('g432.set', 'dimension2', 'Default (10)');
+  
+;
+
+function goalClick(goalURL, the_url){
+        
+        ga('g432.set', 'dimension1', '161-28');    
+        
+        ga('g432.set', 'dimension2', 'Default (10)');
+          
+        ga('g432.send', 'pageview', goalURL)
+        
+
+        ga('set', 'dimension1', '161-28', 2);    
+
+        
+        ga('set', 'dimension2', 'Default (10)');
+        
+
+        ga('send', 'pageview', goalURL)
+    var nw = window.open(the_url, '_blank')
+    nw.focus()
+}
+</script> 
+  <!-- End Google Analytics --> 
+  <script src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/search-ac.161-4.js" type="text/javascript"></script> 
+  <meta name="viewport" content="width=device-width"> 
+  <meta name="title" content="VMware Jobs - All Jobs in Palo Alto, CA"> 
+  <script src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/military_family_loc.json"></script> 
+  <link rel="shortcut icon" href="http://seo.nlx.org/vmware.jobs/favicon.ico"> 
+  <style type="text/css">
+/*//////////////////// OVER WRITES /////////////////*/
+
+body {-webkit-font-smoothing: antialiased;}
+b.ac-highlight {
+	font-weight: bold;
+	color: #333;
+	background: transparent;
+}
+#direct_container .standard .searchTab input {
+	width: 392px;
+}
+#direct_container .searchTab input {
+	padding: 0 4px;
+}
+#direct_container .searchHeader {
+	padding: 12px 14px 22px;
+}
+#direct_container .searchTab input {
+	height: 1.55em;
+	border: 1px solid #0094D6;
+	box-shadow: inset 0 0 4px #0094D6;
+}
+#direct_container .btn.primary {
+	margin-top: 25px;
+}
+#direct_container .searchFooter {
+	border-top: none;
+	padding: 1px 0;
+}
+#direct_container .searchFooter a, #direct_container .searchFooter > span {
+	padding: 0 6px;
+	margin-left: 8px;
+	border-radius: 3px;
+}
+#direct_jobListingTitle {
+	padding: 28px 0 0 18px;
+}
+#direct_jobListingTitle h3.direct_highlightedText, h3 span.direct_highlightedText {
+	border-bottom: 1px solid #ccc;
+	width: 100.5%;
+	margin-left: -18px;
+	padding-left: 14px;
+}
+#direct_disambiguationDiv h3 span.direct_highlightedText {
+	width: auto;
+	margin-left: 0;
+	padding-left: 0;
+}
+.direct_jobListingCompany { 
+	display: none;
+}
+#direct_jobDescriptionText {
+	margin: 0px 0 18px 28px;
+}
+.default_jobListing h4, 
+.featured_jobListing div, 
+.default_jobListing div {
+	margin-left: 22px;
+}
+#direct_listingDiv a .resultHeader {
+	padding: 3px 6px;
+	border-radius: 3px;
+	display: inline-block;
+}
+.featured_jobListing div, .default_jobListing div {
+	padding-left: 6px;
+}
+h3.direct_highlightedText, h3 span.direct_highlightedText {
+	border-bottom: 1px solid #ccc;
+}
+#direct_blurbDiv h3 {
+	padding: 0 0 0;
+}
+#direct_searchOptions li a, #direct_searchOptions li a:hover {
+	background-position: 3px 4px;
+}
+#direct_controlBar li.direct_highlightedText, #direct_searchOptions li a {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.direct_dotjobsFilterContainer .direct_highlightedText {
+	padding-left: 0;
+}
+#button_moreJobs:active {
+	top:0px;
+}
+.direct_noJobs {
+	background: #f2f2f2;
+	margin-left: 14px;
+	padding: 14px;
+	border: 1px solid #e0e0e0;
+}
+.direct_noJobs br  {
+	display: none;
+}
+#no-results {
+	font-size: 1em;
+}
+#no-results-search-terms {
+	padding: 14px;
+	text-align: left;
+	font-size: 1.2em;
+}
+.no-results-term {
+	color: #333;
+	font-size: 1.2em;
+	font-weight: normal;
+}
+@media screen and (max-width: 800px) {
+	.direct_noJobs {
+		margin-top: 14px;
+		margin-left: 0;
+	}
+}
+/*//////////////////// OVER WRITES /////////////////*/
+html {
+background: #1f1f21;
+xbackground: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFmMWYyMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzZhNmI2ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZjFmMjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #1f1f21 0%, #6a6b6f 50%, #1f1f21 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1f1f21), color-stop(50%,#6a6b6f), color-stop(100%,#1f1f21));
+background: -webkit-linear-gradient(top,  #1f1f21 0%,#6a6b6f 50%,#1f1f21 100%);
+background: -o-linear-gradient(top,  #1f1f21 0%,#6a6b6f 50%,#1f1f21 100%);
+background: -ms-linear-gradient(top,  #1f1f21 0%,#6a6b6f 50%,#1f1f21 100%);
+background: linear-gradient(to bottom,  #1f1f21 0%,#6a6b6f 50%,#1f1f21 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1f21', endColorstr='#1f1f21',GradientType=0 );
+
+}
+body {
+	background: transparent !important;
+}
+#direct_wideHeader {
+	width: 960px;
+	margin: 0 auto;
+	padding: 30px 0;
+	display: inline-block;
+	display: block;
+}
+#logo {
+	float: left;
+}
+h3#pg-title {
+	color: #0095d3;
+	font-size: 300%;
+	padding: 50px 0 20px;
+float: left;
+}
+/*//////////////////// start NAVIGATION /////////////////*/
+#nav {
+	clear: both;
+	width: 100%;
+	margin-top: 22px;
+	float: left;
+}
+#main-menu {
+	display: block;
+	font-size: 16px;
+	height: 60px;
+	line-height: 20px;
+	width: 100%;
+	border-top: 1px solid #d0d0d0;
+	float: left;
+}
+#main-menu ul {
+	width: 100%;
+	height: 44px;
+	background: white;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…BoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(6%, #f7f7f7), color-stop(93%, #f1f1f1), color-stop(98%, #ececec), color-stop(100%, #d0d0d0));
+	background: -webkit-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: -o-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: -ms-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: linear-gradient(to bottom, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	border-left: 1px solid #d0d0d0;
+}
+#main-menu li {
+	background-image: none;
+	border-right: 1px solid #d0d0d0;
+	padding-left: 0;
+	width: auto;
+	display: inline-block;
+	background: white;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…BoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(6%, #f7f7f7), color-stop(93%, #f1f1f1), color-stop(98%, #ececec), color-stop(100%, #d0d0d0));
+	background: -webkit-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: -o-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: -ms-linear-gradient(top, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	background: linear-gradient(to bottom, white 0%, #f7f7f7 6%, #f1f1f1 93%, #ececec 98%, #d0d0d0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ececec',GradientType=0 );
+	float: left;
+}
+#main-menu li a {
+	border-right: 1px solid white;
+	color: #333333;
+	display: block;
+	padding: 13px 18px 11px;
+}
+#main-menu li a:hover {
+	color: #333333;
+	background: white;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #ececec 0%, #f1f1f1 6%, #f7f7f7 93%, white 98%, #d0d0d0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(6%, #f1f1f1), color-stop(93%, #f7f7f7), color-stop(99%, white));
+	background: -webkit-linear-gradient(top, #ececec 0%, #f1f1f1 6%, #f7f7f7 93%, white 98%, #d0d0d0 100%);
+	background: -o-linear-gradient(top, #ececec 0%, #f1f1f1 6%, #f7f7f7 93%, white 98%, #d0d0d0 100%);
+	background: -ms-linear-gradient(top, #ececec 0%, #f1f1f1 6%, #f7f7f7 93%, white 98%, #d0d0d0 100%);
+	background: linear-gradient(to bottom, #ececec 0%, #f1f1f1 6%, #f7f7f7 93%, white 98%, #d0d0d0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 );
+}
+#nav .shadow {
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, #cccccc));
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #cccccc 100%);
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #cccccc 100%);
+	background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #cccccc 100%);
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #cccccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#cccccc',GradientType=1 );
+	display: block;
+	height: 45px;
+	float: right;
+	width: 37px;
+	z-index: 2;
+	margin-top: -45px;
+}
+/*//////////////////// end NAVIGATION /////////////////*/
+.page-b-footer-pattern {
+	width: 398px;
+	height: 234px;
+	background: transparent url('http://seo.nlx.org/vmware.jobs/img/page-b-background.png') no-repeat right bottom;
+	position: relative;
+float: right;
+}
+
+
+#direct_wideFooter {
+	width: auto;
+	display: inline-block;
+	display: block;
+}
+#direct_wideHeader:after, #direct_wideFooter:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html #direct_wideHeader, * html #direct_wideFooter { height: 1%; }
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+#direct_blurbContents img {
+	padding: 0 0 5px;
+}
+.banner {
+	width: 100%;
+}
+#banner-video {
+	width: 50%;
+	height: 264px;
+	float: left;
+	overflow: hidden;
+}
+#banner-video iframe {
+	width: 100%;
+	height: 264px;
+}
+#img-click {
+width: 100%;
+}
+#banner-text {
+	background: url('http://seo.nlx.org/vmware.jobs/img/careers-bg-right.png') no-repeat -116px 0px;
+	color: #fff;
+	width: 27%;
+	height: 217px;
+	padding: 5.2% 18% 0% 5%;
+	float: left;
+	overflow: hidden;
+}
+#banner-text p {
+	font-size: 120%;
+}
+#banner-text h4{
+	font-size: 200%;
+	line-height: 1.2;
+	padding-bottom: 10px;
+}
+.learn-more-button a {
+	color: #fff;
+	font-weight: bold;
+	padding-top: 4px;
+	display: block;
+}
+#direct_container .learn-more-button a:hover {
+	color: #fff;
+}
+#direct_blurbContents {
+padding: 0;
+}
+.page-footer-copyright {
+clear: both;
+margin-bottom: 10px;
+	font-size: 13px;
+	line-height: 1.3;
+	color: #999999;
+}
+#fnav {
+width: 960px;
+margin: 30px  auto 0;
+}
+#fnav ul {
+	float: left;
+}
+#fnav.page-footer-nav .page-footer-nav-item {
+	float: left;
+	margin: 0 10px 0 0;
+}
+#fnav a {
+text-decoration:none;
+}
+.page-footer-nav-link {
+	display: block;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 400;
+	color: #999999;
+}
+#fnav.page-footer-nav ul > li.page-footer-nav-item > a.page-footer-nav-link:hover {
+	color: #0095D3;
+}
+/* ////////////////////////DISPLAY LOGO ON MOBILE \\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+#mobile-image img {
+	display: none;
+}
+@media screen and (max-width: 800px) {
+	#direct_header {
+		margin: 0 0px !important;
+	}
+	#direct_header h1#direct_mobileH1 {
+		text-align: center !important;
+		padding: 5px 10px !important;
+		background: #F2F2F2;
+		border-bottom: 1px solid #E0E0E0;
+		font-size: 16px;
+		font-weight: bold;
+		color: #00523a;
+		display: none !important;  /* uncomment to hide header text */       
+	}
+	#mobile-image {
+		background-color: #1f1f21;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	#mobile-image img {
+		display: block;
+		max-width: 50%;
+		margin: 0 auto;
+	}
+	#direct_container .direct_searchContainer {
+		background-color: #f2f2f2;
+		margin-top: 10px;
+	}
+	#direct_container .btn.primary {
+		margin-top: -10px !important;
+		margin-bottom: 10px;
+	}
+}
+/* ////////////////////////DISPLAY LOGO ON MOBILE \\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+#nav-container-mobile, #toggleNav {
+	display: none;
+}
+/*//////////////////start MOBILE////////////////////*/
+@media screen and (max-width: 800px){
+	html, body {
+		max-width: 100%;
+	}
+	body {
+		-webkit-font-smoothing: antialiased;
+	}
+	#direct_header, #direct_footer, .searchContainer, #direct_listingDiv {
+		margin: 0 0px !important;
+	}
+	#direct_container .direct_searchContainer, #direct_disambiguationDiv {
+		width: 95.5%;
+		margin-top: 0px;
+		background-color: #f2f2f2;
+		padding: 2%;
+		border-top: 2px groove;
+		border-bottom: 2px ridge;
+		clear: both;
+	}
+	#direct_shareDiv.direct_shareSolo {
+		width: 100%;
+	}
+	#direct_shareDiv.direct_shareSolo, #direct_disambiguationDiv {
+		margin-top: 28px;
+	}
+	#direct_shareDiv.direct_shareSolo {
+		border-top: 2px groove;
+		border-bottom: 2px ridge;
+	}
+	#standardSearch .searchHeader {
+		width: 94% !important;
+	}
+	#direct_container .searchTab input {
+		width: 98% !important;
+		margin-right: 0px;
+		padding-left: 5px;
+		padding-right: 0px;
+	}
+	#direct_container .direct_searchContainer .btn.primary {
+		background-position: center -30px !important;
+		-moz-border-radius: 3px !important;
+		-webkit-border-radius: 3px !important;
+		border-radius: 3px !important;
+		height: 40px !important;
+	}
+	#standardSearch .searchFooter a, #direct_companyList a {
+		border: 0px solid #666 !important;
+		padding: 10px !important;
+		-webkit-border-radius: 3px !important;
+		-moz-border-radius: 3px !important;
+		border-radius: 3px !important;
+		color: #fff !important;
+	}
+	#direct_moreLessLinks_jobListing .direct_optionsMore, .more_less_links_container .direct_optionsMore, a.direct_mobileJumpLink {
+		display: block;
+		text-align: center;
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+		color: white;
+		border-radius: 3px;
+	}
+	h3.direct_highlightedText {
+		margin-top: 10px !important;
+		margin-bottom: 0 !important;
+		padding-bottom: 6px !important;
+		background: #fff !important;
+		border-bottom: none !important;
+	}
+	#direct_listingDiv a, a.direct_mobileJumpLink {
+		-moz-border-radius: 0px !important;
+		-webkit-border-radius: 0px !important;
+		border-radius: 0px !important;
+		border-width: 0px !important;
+		border-style: none !important;
+		color: white !important;
+		font-weight: normal !important;
+	}
+	#direct_listingDiv #direct_applyButtonBottom a {
+		-moz-border-radius: 3px !important;
+		-webkit-border-radius: 3px !important;
+		border-radius: 3px !important;
+	}
+	#direct_listingDiv a span:hover, a.direct_mobileJumpLink:hover {
+		font-weight: normal !important;
+	}
+	li .direct_joblocation {
+		color: #fff;
+		padding-left: 18px;
+	}
+	#button_moreJobs {
+		width: 72%;
+		margin-left: 0px;
+		margin: 0 auto;
+		border-radius: 3px;
+		color: white !important;
+		font-weight: normal !important;
+	}
+	.direct_joblisting {
+		padding: 0 0 0px 0;
+		border-top: 2px ridge;
+	}
+	#direct_listingDiv a .resultHeader {
+		padding: 12px 0 0 12px;
+		border-radius: 0;
+		display: block;
+	}
+	#direct_moreLessLinks_jobListing .direct_optionsMore, .more_less_links_container .direct_optionsMore, a.direct_mobileJumpLink {
+		padding: 10px !important;
+		border-radius: 3px !important;
+	}
+	#direct_listingDiv .featured_jobListing a {
+		background: transparent !important;
+	}
+	#direct_listingDiv .featured_jobListing a:hover {
+	}
+	#direct_listingDiv .featured_jobListing a span:hover {
+		background: none;
+		background-color: transparent;
+	}
+	#direct_listingDiv a:link, #direct_listingDiv a:visited, #direct_listingDiv a:hover {
+		font-weight: normal !important;
+	}
+	.featured_jobListing {
+		background-color: #f2f2f2;
+		border: none;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		padding: 24px 0px 0 0px !important;
+		margin: 0 0px !important;
+		border-top: 2px ridge #fff;
+	}
+	.featured_jobListing li .direct_joblocation {
+		color: #666;
+	}
+	.featured_jobListing .direct_joblocation {
+		margin-left: 24px !important;
+	}
+	.featured_jobListing h4 {
+		background-position: 14px 18px;
+	}
+	.featured_jobs_note {
+		top: 2px;
+		right: 6px;
+	}
+	#direct_listingDiv a#button_moreJobs {
+		width: 76%;
+		margin: 0 auto;
+		padding: 10px;
+		border-radius: 3px !important;
+	}
+	#direct_disambiguationDiv a {
+		-moz-border-radius: 3px !important;
+		-webkit-border-radius: 3px !important;
+		border-radius: 3px !important;
+		border-width: 0 !important;
+		color: #fff !important;
+		font-weight: normal !important;
+	}
+	div.direct_offsiteHoverDiv {
+		border: none;
+	}
+	#direct_disambiguationDiv li a {
+		margin-left: 14px !important;
+		margin-right: 14px !important;
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+	}
+	#direct_micrositeCarousel {
+		padding: 10px 38px !important;
+	}
+	#direct_micrositeCarousel .scrollable li>a, #direct_micrositeCarousel .scrollable li>a:hover {
+		border: none !important;
+	}
+	#direct_colophon div div a, #direct_colophon div div a:hover {
+		margin-left: 28px !important;
+	}
+	#browsable ul li a {
+		color: white;
+		font-weight: 300 !important;
+	}
+	#direct_micrositeCarousel .scrollable {
+		position: relative !important;
+		overflow: hidden !important;
+	}
+	#browsable ul {
+		width: 100%;
+	}
+	.navi {
+		display:none;
+	}
+	#direct_micrositeCarousel ul {
+		margin-top: 0px !important;
+	}
+	#browsable ul {
+		width: 100% !important;
+	}
+	.items div {
+		margin-bottom: -10px !important;
+	}
+	#direct_container .searchTab input {
+		padding-left: 2% !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.directseo_jobsnippet {
+		border-width: 0 !important;
+		padding: 4px 20px 8px !important;
+		color: white !important;
+		margin: 0 !important;
+		-moz-border-radius: 0px !important;
+		-webkit-border-radius: 0px !important;
+		border-radius: 0px !important;
+	}
+	.featured_jobListing .directseo_jobsnippet {
+		background: #f2f2f2 !important;
+		color: #666 !important;
+		padding-left: 44px !important;
+	}
+	#direct_container .direct_searchContainer {
+		background-color: #f2f2f2 !important;
+		background-image: none !important;
+	}
+	#direct_dotjobsMetaBoxSearch #standardSearch {
+		border: none !important;
+	}
+	#direct_container #direct_dotjobsMetaBoxSearch .searchTab label {
+		color: #666 !important;
+		font-size: 2em;
+		padding-bottom: 1px;
+	}
+	#direct_container #direct_dotjobsMetaBoxSearch .searchTab input {
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+	.btn {
+		-webkit-box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.2),0 0px 0px rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.2),0 0px 0px rgba(0, 0, 0, 0.05);
+		box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.2),0 0px 0px rgba(0, 0, 0, 0.05);
+	}
+	#direct_dotjobsMetaBoxSearch #standardSearch .searchFooter {
+		padding: 0px 0 0px 0 !important;
+		margin-top: 0px !important;
+	}
+	#direct_dotjobsMetaBoxSearch .row {
+		background: #f2f2f2;
+	}
+	#direct_dotjobsFilterCarousel .direct_dotjobsFilterContainer {
+		background: #f2f2f2 !important;
+		border: 0px solid #e0e0e0 !important;
+	}
+	#direct_dotjobsFilterCarousel {
+		border-top: 2px groove;
+		border-bottom: 2px ridge;
+	}
+	.direct_dotjobsFilterContainer h3 {
+		background: #f2f2f2;
+		border: 0px solid #e0e0e0;
+		line-height: 30px;
+		font-size: 20px;
+	}
+	#direct_shareDiv {
+		padding: 12px 0 !important;
+	}
+	#direct_dotjobsCustomNavBar a, #direct_dotjobsFilterCarousel .direct_dotjobsFilterContainer a, #direct_innerContainer .company_group ul a, .direct_dotjobsFilterContainer a, #direct_container #direct_allCompaniesFamilyLinks a {
+		color: white;
+		border-width: 0;
+		padding: 11px 20px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		margin: 5px auto;
+	}
+	a.direct_optionsMore {
+		color: white !important;
+		font-weight: normal !important;
+	}
+	#direct_applyButtonBottom {
+		margin: 0 14px;
+	}
+	#direct_listingDiv a:hover .resultHeader {
+		background-color: #transparent !important;
+	}
+	#direct_nav a:hover{ 
+		background-color: #383838 !important;
+		background-image: none !important;
+	}
+	#direct_micrositeCarousel .scrollable li>a, #direct_micrositeCarousel .scrollable li>a:hover {
+		-webkit-border-radius: 3px !important;
+		-moz-border-radius: 3px !important;
+		border-radius: 3px !important;
+	}
+	#direct_listingDiv a:hover .resultHeader {
+		font-weight: normal !important;
+	}
+	.ui-menu-item a, .ui-menu-item-alternate a {
+		width: 92%;
+		padding: 16px 4%;
+	}
+	#standardSearch .searchFooter a, #direct_companyList a, 
+	#direct_moreLessLinks_jobListing .direct_optionsMore, .more_less_links_container .direct_optionsMore, a.direct_mobileJumpLink,
+	#direct_listingDiv a, a.direct_mobileJumpLink,
+	#direct_disambiguationDiv a,
+	#browsable ul li a,
+	.directseo_jobsnippet,
+	#direct_dotjobsCustomNavBar a, #direct_dotjobsFilterCarousel .direct_dotjobsFilterContainer a, #direct_innerContainer .company_group ul a, .direct_dotjobsFilterContainer a, #direct_container #direct_allCompaniesFamilyLinks a,
+	a.direct_optionsMore, #email-button {
+		background: #0094d6 !important; /* BRAND COLOR GOES Here */
+		background-color: #0094d6 !important; /* BRAND COLOR GOES Here */
+	}
+	#direct_listingDiv .featured_jobListing a,
+	#direct_listingDiv .featured_jobListing a:hover,
+	.featured_jobs_note {
+		color: #0094d6 !important; /* BRAND COLOR GOES Here */
+	}
+	#banner-video {
+		display: none;
+	}
+	#banner-text {
+		background-position: 0px 0px;
+		width: 95%;
+		padding: 6% 0% 0% 5%;
+		background-size: cover;
+	}
+	#banner-text p {
+		width: 60%;
+	}
+#direct_container .row .stub {
+padding: 0 0 0 0 !important;
+}
+/*#social-icons {
+display: none;
+}*/
+h3#pg-title {
+float: none;
+padding-left: 4%;
+}
+/* //////////////////////// start Mobile Navigation \\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+#nav-container-mobile{
+	display: block;
+}
+#nav, #nav-mobile {
+display: none;
+}
+	#direct_header h1#direct_mobileH1 {
+		padding: 10px 0 !important;
+	}
+	#toggleNav {
+		background-color: #0094d6;
+		font-size: 125%;
+		font-weight: normal;
+		color: #fff !important;
+		padding: 10px;
+		display: inline-block;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		float:right;
+		margin: -48px 14px 10px 0;
+	}
+	#nav-mobile ul li a, #nav-mobile ul li a:hover {
+		display: block;
+		padding: 14px 18px;
+		background: #0094d6;
+		border-bottom: 2px groove #f0f0f0;
+		color: #fff;
+		font-size: 136%;
+		font-weight: bold;
+	}
+ 	a.selected-tab-mobile {
+		background: #AFD9CB !important;
+		color: #008b5d !important;
+	}
+}
+
+/* //////////////////////// end Mobile Navigation \\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+/*//////////////////end MOBILE////////////////////*/
+
+
+/*//////////////////begin talent network button////////////////////*/
+
+#btn-talent-networkmain {
+    display: none;
+    }
+
+@media screen and (max-width: 800px){
+#direct_shareDiv {
+ margin-top:65px;
+}
+
+
+#btn-talent-networkmain {
+margin: 0 auto !important;
+text-align: center;
+display: block;
+padding-bottom: 10px;
+font-weight: bold;
+color: #0094d6;
+font-size: 24px;
+line-height: 26px;
+}
+
+#direct_applyButtonBottom {
+display:none;
+}
+
+}
+
+
+
+
+
+/*//////////////////end talent network button////////////////////*/
+/*#social-icons {
+margin: 0 auto;
+float: right;
+margin-top: 6px;
+}
+#social-icons img {
+	width: 28px;
+	padding: 0 2px;
+}
+#social-icons p {
+	font-size: 16px;
+	color: #387c2c;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding: 15px 0 0;
+line-height: .8;
+text-align: right;
+}*/
+</style> 
+  <script type="text/javascript">
+	function toggleDiv(divId) {
+		$("#"+divId).slideToggle("fast");
+	}
+</script> 
+  <meta property="og:title" content="Sr MTS QE in Palo Alto, California, United States"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="http://vmware.jobs/palo-alto-ca/sr-mts-qe/6D205FED1C92457E9728169F8D59DB2D/job/?utm_campaign=TweetMyJobs.com&amp;codes=SMTW&amp;utm_source=TweetMyJobs.com-DE&amp;vs=1505&amp;utm_medium=Social%20Media&amp;z=1"> 
+  <meta property="og:image" content=""> 
+  <meta property="og:site_name" content="VMware Jobs"> 
+  <link rel="stylesheet" href="/style/def.ui.microsite.mobile.css" type="text/css"> 
+  <style>
+        #addThis {
+            float: none;
+        }
+    </style> 
+  <!-- Quantcast Tag, part 1 --> 
+  <script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+   var elem = document.createElement('script');
+   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge")
+               + ".quantserve.com/quant.js";
+   elem.async = true;
+   elem.type = "text/javascript";
+   var scpt = document.getElementsByTagName('script')[0];
+   scpt.parentNode.insertBefore(elem, scpt);  
+  })();
+</script> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/ItemPage"> 
+  <a name="top"></a> 
+  <div id="direct_wideHeader"> 
+   <div id="logoContainer"> 
+    <div id="logo">
+     <a href="/"><img src="http://seo.nlx.org/vmware.jobs/img/logo.png"></a>
+    </div> 
+   </div> 
+  </div> 
+  <div id="direct_container"> 
+   <div id="direct_innerContainer"> 
+    <div id="direct_header"> 
+     <h1 id="direct_mobileH1"> VMware Jobs </h1>
+     <!--direct_mobileH1--> 
+     <div id="mobile-image">
+      <img src="http://seo.nlx.org/vmware.jobs/img/logo.png">
+     </div> 
+     <h3 id="pg-title">Careers</h3> 
+     <!--<div id="social-icons">
+				<p>Connect with VMware Careers</p>
+				<a target="_blank" title="VMware on Facebook" href="http://www.facebook.com/vmwarecareers"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-facebook.png" alt="Facebook" title="Facebook"></a>
+				<a target="_blank" title="VMware on Twitter" href="http://twitter.com/#!/VMwareCareers"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-twitter.png" alt="twitter" title="twitter"></a>
+				<a target="_blank" title="VMware on LinkeIn" href="http://www.linkedin.com/company/vmware/careers"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-linkedin.png" alt="Linkedin" title="LinkedIn"></a>
+				<a target="_blank" title="VMware on YouTube" href="http://www.youtube.com/user/VMwareCareers"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-youtube.png" alt="youtube" title="YouTube"></a>
+				<a target="_blank" title="VMware on LinkeIn" href="http://blogs.vmware.com/careers"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-blogger.png" alt="Linkedin" title="LinkedIn"></a>
+				<a target="_blank" title="VMware on Google Plus" href="https://plus.google.com/u/0/105592406338464275885/posts"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-google-plus.png" alt="Google Plus" title="Google Plus"></a>
+				<a target="_blank" title="pinterest" href="http://pinterest.com/lifeatvmware"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-pinterest.png" alt="Blog" title="Blog"></a>
+				<a target="_blank" title="Instagram" href="http://instagram.com/vmwarecareers"><img src="http://seo.nlx.org/vmware.jobs/img/vmw-icon-social-instagram.png" alt="Blog" title="Blog"></a>
+			</div>--> 
+     <div id="nav"> 
+      <div id="main-menu"> 
+       <ul> 
+        <li> <a class="first" href="http://www.vmware.com/company/careers/">Overview</a> </li> 
+        <li> <a href="http://www.vmware.com/company/careers/university-relations.html">University Relations</a> </li> 
+        <li> <a href="http://www.vmware.com/company/careers/life-at-vmware.html">Life at VMware</a> </li> 
+        <li> <a href="http://www.vmware.com/company/careers/people-at-vmware.html">People at VMware</a> </li> 
+        <li> <a href="http://www.vmware.com/company/careers/benefits.html">Benefits &amp; Perks</a> </li> 
+        <li> <a href="http://www.vmware.com/company/careers/awards.html">Awards</a> </li> 
+       </ul> 
+       <div class="shadow">
+        &nbsp;
+       </div> 
+      </div> 
+     </div> 
+     <!-- MOBILE NAV --> 
+     <a href="javascript:toggleDiv('nav-mobile');" id="toggleNav"> <img src="http://seo.nlx.org/img/mobile-menu-icon.png"> </a> 
+     <div id="nav-container-mobile"> 
+      <div id="nav-mobile" class="hp-grid-full"> 
+       <ul> 
+        <li> <a class="first" href="http://www.vmware.com//company/careers/">Overview</a> </li> 
+        <li> <a href="http://www.vmware.com//company/careers/university-relations.html">University Relations</a> </li> 
+        <li> <a href="http://www.vmware.com//company/careers/life-at-vmware.html">Life at VMware</a> </li> 
+        <li> <a href="http://www.vmware.com//company/careers/people-at-vmware.html">People at VMware</a> </li> 
+        <li> <a href="http://www.vmware.com//company/careers/benefits.html">Benefits &amp; Perks</a> </li> 
+        <li> <a href="http://www.vmware.com//company/careers/awards.html">Awards</a> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <!-- MOBILE NAV --> 
+     <div class="cp-grid-full banner clearfix"> 
+      <div id="banner-video"> 
+       <img id="img-click" src="http://seo.nlx.org/vmware.jobs/img/vmwarevideobutton.png"> 
+       <div id="player-embed-div"> 
+       </div> 
+      </div> 
+      <div id="banner-text"> 
+       <h4>Envisioning<br>What's Next</h4> 
+       <p>We are a compassionate community building transformative products and solutions that enable us to architect what's next.<br><span class="learn-more-button"><a href="http://www.youtube.com/watch?v=T2oMGdpU1EU&amp;feature=share&amp;list=SP0E6lZWm2UDZioZ83fkggdnn441LzKnX_" target="_blank">Learn more &gt;</a></span> </p>
+      </div> 
+     </div> 
+     <script>
+$("#img-click").css('cursor', 'pointer').click(function() {
+	$(this).hide();
+    $('#player-embed-div').show().append('<iframe allowfullscreen="" frameborder="0" src="http://www.youtube.com/embed/T2oMGdpU1EU?showinfo=0&amp;autoplay=1&amp;controls=0&amp;modestbranding=1&amp;list=SP0E6lZWm2UDZioZ83fkggdnn441LzKnX_"></iframe>');
+});
+</script> 
+    </div>
+    <!--direct_header--> 
+    <div class="direct_searchContainer"> 
+     <form id="standardSearch" action="/jobs/"> 
+      <div class="row standard"> 
+       <div class="searchHeader" role="search"> 
+        <div class="searchTab"> 
+         <label for="location">Where</label> 
+         <input title="Search Location" type="text" name="location" id="location" class="micrositeLocationField" value="Palo Alto, CA"> 
+         <span class="helptext" id="where">city, state, country</span> 
+        </div> 
+        <div class="searchTab"> 
+         <label for="q">What</label> 
+         <input title="Search Phrase" type="text" name="q" id="q" class="micrositeTitleField" value=""> 
+         <span class="helptext" id="what">job title, keywords</span> 
+        </div> 
+        <div class="stub"> 
+         <div class="pull-right"> 
+          <input title="Submit Search" type="submit" class="btn primary" value="search"> 
+         </div> 
+        </div> 
+       </div>
+       <!-- .searchHeader --> 
+       <div class="clear"></div> 
+      </div> 
+      <div class="row"> 
+       <div class="searchFooter"> 
+        <a href="/" class="homeLink">Home</a> 
+        <a href="/jobs/" class="viewAllLink"> View All Jobs <span class="totaljobs"> <span>(</span>1,102<span>)</span> </span> </a> 
+        <div style="clear:both"></div> 
+       </div> 
+      </div> 
+     </form> 
+    </div> 
+    <div itemscope itemtype="http://schema.org/JobPosting" role="main"> 
+     <meta itemprop="employmentType" content="Paid Work"> 
+     <div id="direct_jobListingTitle"> 
+      <h3> <span class="direct_jobListingCompany" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization"> <span itemprop="name">VMware</span> </span> <span class="direct_highlightedText"> <span itemprop="title">Sr MTS QE</span> in <span itemprop="jobLocation" itemscope itemtype="http://schema.org/Place"> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> <span itemprop="addressLocality">Palo Alto</span> <span itemprop="addressRegion">California</span> <span itemprop="addressCountry">United States</span> </span> </span> </span> </h3> 
+     </div> 
+     <div id="direct_horzRule"></div> 
+     <div id="direct_listingDiv"> 
+      <meta itemprop="datePosted" content="2015-02-27T15:23:58"> 
+      <div id="direct_jobDescriptionText" itemprop="description"> 
+       <p><strong>Posting Title</strong></p> 
+       <p>Sr MTS QE</p> 
+       <p><strong>Job Description</strong></p> 
+       <p>This is a Sr. MTS level position with ISBU- EVO RACK Product Engineering Team. EVO RACK team comprises highly talented engineering team with proven track records in developing datacenter mission critical products. EVO RACK is a Converged &amp; Hyper Converged Infrastructure solution that enables our customers enabling to reduce costs and provide time-to-value to their customers with a pre-integrated and optimized bundle of hardware and software across networking, compute servers, and storage typically combined with virtualization, management, and other software (DR, load balancing, etc.). This is an exciting area to work and a fast-paced work culture. If developing cutting-edge products that solve large real world distributed systems problems and delivering them on an aggressive schedule motivates you, then this job is for you.</p> 
+       <p>Role: As part of the VMware SDDC Emerging Solutions - Product Engineering team, you will work with the team of strong engineers building products in this area. As a member of the team you will be working on Build and release engineering, Continuous Integration testing of a scalable, data center-wide distributed management system software to deliver on the promise of automated provisioning, deployment, and operations of the data center infrastructure. You will closely work with developers, QEs and PMs to deliver quality releases. Your responsibilities will include but not be limited to:</p> 
+       <ul> 
+        <li><p>Build and release engineering.</p></li> 
+        <li><p>Design, implement and execute test plan against the core components of vRACK/EVO RACK</p></li> 
+        <li><p>Automate functional and end to end test cases using Java and python and integrate in to Continuous Integration Framework</p></li> 
+        <li><p>Understand and integrate third party products and components to work seamlessly with the software</p></li> 
+        <li><p>Ensure that proposed and existing architectures are aligned with organizational goals and objectives</p></li> 
+        <li><p>Find product defects and follow up to closure</p></li> 
+       </ul> 
+       <p>Develop innovate solutions in testing Converged and Hyper Converged Infrastructure domain. Position Requirements</p> 
+       <ul> 
+        <li><p>University degree in the field of computer science/engineering or information systems (Master’s degree preferred).</p></li> 
+        <li><p>8+ years’ work experience with 6+ years of System Software development test experience.</p></li> 
+        <li><p>Proven experience in the Hardware management of servers, storage appliances, and network switches</p></li> 
+        <li><p>Proven experience in VMware technologies vSphere, vCenter, NSX etc.</p></li> 
+        <li><p>Experience in OpenStack software suite and integration of orchestration and resource provisioning layers</p></li> 
+        <li><p>Network architecture including L2 and L3 protocols for routing, multi-link aggregation, QoS, and security</p></li> 
+        <li><p>System software development with exposure to drivers, Linux kernel</p></li> 
+        <li><p>Exposure to distributed software systems including use of utilities such as Apache Zookeeper, Cassandra, Cages, and related projects highly desirable</p></li> 
+        <li><p>Hand-on technical experience in C++, Python, J2EE and Scripting.</p></li> 
+        <li><p>Experience in implementing integrations using SOAP, REST, JSON etc.</p></li> 
+        <li><p>Exceptional analytical, conceptual, and problem-solving abilities.</p></li> 
+        <li><p>Able to prioritize and execute tasks in a high-pressure environment.</p></li> 
+        <li><p>Experience working in a team-oriented, collaborative environment.</p></li> 
+        <li><p>Motivated and self-driving personnel.</p></li> 
+        <li><p>Superior written and oral communication skills.</p></li> 
+        <li><p>Strong interpersonal and consultative skills.</p></li> 
+       </ul> 
+       <p><strong>Why work for our Division</strong></p> 
+       <p>VMware’s world-class, award-winning R&amp;D team is comprised of thousands of top-notch computer scientists and software engineers that are transforming computing through virtualization. Members of the R&amp;D team voice their creative ideas and watch them become initiatives, participate in exciting short-term and long-term products on the VMware roadmap, initiate advanced research projects, and/or write and test code that ships. At VMware, our engineers continue to learn and grow by working with top professionals from around the world and recent graduates of top universities and by taking advantage of our extensive internal training opportunities and generous external education assistance program. R&amp;D team members work on the latest computing equipment and have access to the ACM and IEEE libraries. VMware has R&amp;D offices in: Silicon Valley; Burlington, MA; Cambridge, MA; Broomfield, CO; Sofia, Bulgaria; Aarhus, Denmark; London, UK; Herzliya, Israel; Bangalore, India; and Beijing, China.</p> 
+       <p><strong>Advertised Location</strong></p> 
+       <p>Palo Alto, CA, US</p> 
+       <p><strong>About Us</strong></p> 
+       <p>VMware is the leader in cloud infrastructure, business mobility and virtualization software. A pioneer in the use of virtualization and policy-driven automation technologies, VMware simplifies IT complexity across the entire data center to the virtual workplace, empowering customers with solutions in the software-defined data center to hybrid cloud computing and the mobile workspace.</p> 
+       <p>With 2014 revenues of $6.04 billion, VMware has more than 500,000 customers, 75,000 partners, and 18,000+ employees in 120+ locations around the world. At the core of what we do are our employees who deeply value execution, passion, integrity, customers, and community. Want to be part of a compassionate community that thrives on architecting what's next in IT? Learn more at vmware.com/careers.</p> 
+       <p><strong>EEO Statement</strong></p> 
+       <p>VMware is an equal opportunity employer committed to the principles of equal employment opportunity and affirmative action for all applicants and employees. Equal opportunity and consideration are afforded to all qualified applicants and employees in personnel actions, which include: recruiting and hiring, selection for training, promotion, rates of pay or other compensation, transfer, discipline, demotion, layoff or termination. VMware does not unlawfully discriminate on the basis of race, color, religion, sexual orientation, marital status, pregnancy, gender identity, gender expression, family medical history or genetic information, citizenship, national origin or ancestry, sex, age, physical or mental disability, medical condition, veteran status, military status, or any other basis protected by federal, state or local law, ordinance or regulation. VMware also makes reasonable accommodations for disabled employees consistent with applicable law. Further, it is the policy of VMware to maintain a working environment free of all forms of harassment.</p> 
+       <p><strong>Requisition Number</strong></p> 
+       <p>59411BR</p> 
+       <p><strong>Is this a remote or multiple location position?</strong></p> 
+       <p>No</p> 
+       <p><strong>LinkedIn Recruiter Account Email</strong></p> 
+       <p>pcohan@vmware.com</p> 
+       <p><strong>Advertised Group</strong></p> 
+       <p>Engineering</p> 
+       <meta name="de-buid" content=""> 
+       <meta name="de-buid-associated-jobs" content=""> 
+       <meta name="de-buid-title" content=""> 
+       <meta name="de-buid-date-crawled" content=""> 
+       <meta name="de-buid-date-updated" content=""> 
+       <meta name="de-special-commits" content=""> 
+       <meta name="de-buid-title-slug" content=""> 
+      </div> 
+      <div class="direct-action-btn" id="direct_applyButtonBottom"> 
+       <a href="http://my.jobs/6D205FED1C92457E9728169F8D59DB2D10" onclick="goalClick('/G/apply-click', this.href); return false;">Apply Now</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="direct_applyDiv" class="direct_rightColBox"> 
+     <div id="direct_applyButton" class="direct-action-btn" role="menu"> 
+      <a href="http://my.jobs/6D205FED1C92457E9728169F8D59DB2D10" onclick="goalClick('/G/apply-click', this.href); return false;">Apply Now</a> 
+     </div> 
+     <div id="direct_shareDiv" role="menu"> 
+      <h3>Share</h3> 
+      <!-- AddThis Button BEGIN --> 
+      <div id="addThis" class="addthis_toolbox addthis_32x32_style addthis_default_style" att="pad"> 
+       <a class="addthis_button_facebook"></a> 
+       <a class="addthis_button_twitter"></a> 
+       <a class="addthis_button_linkedin"></a> 
+       <a class="addthis_button_google_plusone" g:plusone:href="http://vmware.jobs/palo-alto-ca/sr-mts-qe/6D205FED1C92457E9728169F8D59DB2D/job/?utm_campaign=TweetMyJobs.com&amp;codes=SMTW&amp;utm_source=TweetMyJobs.com-DE&amp;vs=1505&amp;utm_medium=Social%20Media&amp;z=1" g:plusone:count="false" g:plusone:expandto="left"></a> 
+       <a class="addthis_button_email"></a> 
+       <a class="addthis_button_compact"></a> 
+      </div> 
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=jobsdotjobs"></script> 
+      <!-- AddThis Button END --> 
+      <!--replace with my.jobs sharing when ready. JPS 10-4-12--> 
+     </div> 
+    </div> 
+    <div id="direct_disambiguationDiv"> 
+     <div id="direct_searchCriteria" role="menu"> 
+      <h3 id="direct_searchCriteriaHeader" style="float:left;">Current Search Criteria</h3> 
+      <div style="clear:left;"></div> 
+      <ul id="direct_searchOptions"> 
+       <li> <a href="/palo-alto/california/usa/jobs/?utm_campaign=TweetMyJobs.com&amp;codes=SMTW&amp;utm_source=TweetMyJobs.com-DE&amp;vs=1505&amp;utm_medium=Social+Media&amp;z=1" title="Remove Sr MTS QE"> Sr MTS QE </a> </li> 
+       <li> <a href="/sr-mts-qe/jobs-in/california/usa/jobs/?utm_campaign=TweetMyJobs.com&amp;codes=SMTW&amp;utm_source=TweetMyJobs.com-DE&amp;vs=1505&amp;utm_medium=Social+Media&amp;z=1" title="Remove Palo Alto"> Palo Alto </a> </li> 
+       <li> <a href="/sr-mts-qe/jobs-in/usa/jobs/?utm_campaign=TweetMyJobs.com&amp;codes=SMTW&amp;utm_source=TweetMyJobs.com-DE&amp;vs=1505&amp;utm_medium=Social+Media&amp;z=1" title="Remove California"> California </a> </li> 
+       <li><a href="/jobs/" title="Clear All">Clear All</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <script>
+$(document).ready(function(){RetrieveExternalCampaignCookie();});
+</script> 
+    <div id="direct_clearDiv"></div> 
+    <div id="direct_colophon"> 
+     <div class="direct_offsiteContainer"> 
+      <div class="direct_offsiteHoverDiv"> 
+       <ul> 
+        <li><a class="direct_companyLink" href="http://www.vmware.com/company/careers" title="VMware Careers">VMware Careers</a></li> 
+       </ul> 
+      </div> 
+      <div class="direct_offsiteTileDiv">
+       Career Sites
+      </div> 
+     </div> 
+     <div class="direct_offsiteContainer"> 
+      <div class="direct_offsiteHoverDiv"> 
+       <ul> 
+        <li><a style="background-image: url('http://png.nlx.org/content_ms/files/company-social-icon.png');" class="direct_socialLink" target="_blank" href="http://blogs.vmware.com/careers" title="VMware Blog">VMware Blog</a></li> 
+        <li><a style="background-image: url('http://png.nlx.org/content_ms/files/facebook.png');" class="direct_socialLink" target="_blank" href="http://www.facebook.com/pages/VMware-Careers/361013714203?v=app_4949752878" title="VMware Facebook">VMware Facebook</a></li> 
+        <li><a style="background-image: url('http://png.nlx.org/content_ms/files/company-social-icon.png');" class="direct_socialLink" target="_blank" href="http://gplus.to/vmwarecareers" title="VMware Google +">VMware Google +</a></li> 
+        <li><a style="background-image: url('http://png.nlx.org/content_ms/files/linkedin.png');" class="direct_socialLink" target="_blank" href="http://www.linkedin.com/groups?gid=2922468" title="VMware LinkedIn">VMware LinkedIn</a></li> 
+        <li><a style="background-image: url('http://png.nlx.org/content_ms/files/twitter.png');" class="direct_socialLink" target="_blank" href="https://twitter.com/vmwarecareers" title="VMware Twitter">VMware Twitter</a></li> 
+        <li><a style="background-image: url('http://png.nlx.org/content_ms/files/youtube.png');" class="direct_socialLink" target="_blank" href="http://www.youtube.com/user/VMwareCareers" title="VMware Youtube">VMware Youtube</a></li> 
+       </ul> 
+      </div> 
+      <div class="direct_offsiteTileDiv">
+       Social Media
+      </div> 
+     </div> 
+     <div class="direct_offsiteContainer"> 
+      <div class="direct_offsiteHoverDiv"> 
+       <ul> 
+       </ul> 
+      </div> 
+      <div class="direct_offsiteTileDiv noHover"></div> 
+     </div> 
+     <div id="direct_deBadgeContainer" class="direct_offsiteContainer"> 
+      <div class="direct_offsiteHoverDiv"> 
+       <ul> 
+        <li><a class="direct_deBadgeLink" style="background-image: url('//d2e48ltfsb5exy.cloudfront.net/content_ms/files/de-icon.png')" href="http://www.directemployers.org/about/" title="About DirectEmployers">About DirectEmployer...</a></li> 
+        <li><a class="direct_deBadgeLink" style="background-image: url('//d2e48ltfsb5exy.cloudfront.net/content_ms/files/de-icon.png')" href="http://www.directemployers.org/become-a-member/" title="Become a Member">Become a Member</a></li> 
+        <li><a class="direct_deBadgeLink" style="background-image: url('//d2e48ltfsb5exy.cloudfront.net/content_ms/files/de-icon.png')" href="http://www.directemployers.org/about/member-companies/" title="Member Directory">Member Directory</a></li> 
+       </ul> 
+      </div> 
+      <div id="direct_deBadge" class="direct_offsiteTileDiv"></div> 
+     </div> 
+     <div id="direct_clearDiv"></div> 
+    </div> 
+    <div id="direct_footer" role="contentinfo"> 
+    </div>
+    <!--direct_footer--> 
+   </div>
+   <!--direct_innercontainer--> 
+  </div>
+  <!--direct_container--> 
+  <div id="direct_wideFooter"> 
+   <style>
+@media screen and (max-width: 800px){
+#direct_container .row.standard .searchTab, #direct_container .row.veteran .searchTab {
+width: 100% !important;
+}
+}
+</style> 
+   <div id="fnav" class="page-footer-nav"> 
+    <div class="page-footer-copyright">
+     Copyright © 2013 VMware, Inc. All rights reserved.
+    </div> 
+    <ul> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link" title="Contact Us" href="http://www.vmware.com/company/contact/">Contact Us</a> </li> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link" title="Terms of Use" href="http://www.vmware.com/help/legal.html">Terms of Use</a> </li> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link" title="Privacy" href="http://www.vmware.com/help/privacy.html">Privacy</a> </li> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link" title="Accessibility" href="http://www.vmware.com/accessibility.html">Accessibility</a> </li> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link" title="Site Index" href="http://www.vmware.com/site_index.html">Site Index</a> </li> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link" title="Help" href="http://www.vmware.com/help/">Help</a> </li> 
+     <li class="page-footer-nav-item"> <a class="page-footer-nav-link footer-feedback" title="Feedback" href="javascript:window.open('https://vmware.co1.qualtrics.com/SE/?SID=SV_b3COdXybimzMJH7&amp;Q_lang=EN','','width=715,height=675,location=no,menubar=no,resizable=no,scrollbars=yes,status=no,toolbar=no');void(0);" name="&amp;lpos=nav_footer : 6">Feedback</a> </li> 
+    </ul> 
+   </div> 
+   <div class="page-b-footer-pattern"></div> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(Level of Job)").hide();
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(LinkedIn Recruiter Account Email)").hide();
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(@vmware.com)").hide();
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function(){
+    if ($('div#direct_applyButtonBottom').length > 0){
+        talent_linkmain = "<div id=\"btn-talent-networkmain\">Email job to yourself <br>or share with friends!</div>";
+        $('div#direct_applyButtonBottom').after(talent_linkmain);
+    }
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(Advertised Group)").hide();
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(Is this a remote or multiple location position?)").hide();
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(@VMWARE.COM)").hide();
+});
+</script> 
+   <script type="text/javascript">
+$(document).ready(function () {
+   $("p:contains(No)").hide();
+});
+</script> 
+   <script>
+if (error_page){
+    ga('send', 'event', 'Error', error_page, 'page: ' + document.location.pathname + document.location.search + ' ref: ' + document.referrer)
+}else{
+    ga('send', 'pageview')
+             
+    ga('g432.send', 'pageview')
+    
+}
+</script> 
+  </div> 
+  <script src="//d2e48ltfsb5exy.cloudfront.net/content_ms/files/def.ui.microsite.analytics.151-15.js" type="text/javascript"></script> 
+  <img style="display: none;" border="0" height="1" width="1" alt="My.jobs" src="http://my.jobs/pixel.gif?d=vmware.jobs&amp;pc=listing&amp;jvs=88&amp;jvt=Sr+MTS+QE&amp;jvcd=http%3A%2F%2Fvmware.jobs%2F&amp;jvl=Palo+Alto%2C+CA&amp;jvb=20916&amp;st=company&amp;jvg=6D205FED1C92457E9728169F8D59DB2D&amp;jvc=VMware"> 
+  <!-- Quantcast Tag, part 2 --> 
+  <script type="text/javascript">
+    _qevents.push( { qacct:"p-f4sayuhJjqv_Q", labels:"Direct SEO, Dot Jobs"} );
+</script> 
+  <noscript> 
+   <div style="display: none;"> 
+    <img src="http://pixel.quantserve.com/pixel/p-f4sayuhJjqv_Q.gif?labels=Direct%20SEO%2C%20Dot%20Jobs" height="1" width="1" alt="Quantcast"> 
+   </div> 
+  </noscript> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"49b0eca3f4","agent":"js-agent.newrelic.com/nr-536.min.js","transactionName":"blVTZxMHXUcABUMLW1cfd0YPBUddDggYEVFWHkdaBBFAGhIDVhBXUW9HWgQRQA4LCVU9UFxEUFoNOVFNPhJeFlhcb0JfFAFsXg4EaAtQ","userAttributes":"QhJEQQ1ECRYXC0ADRlweW1wDFRFJ","applicationID":"480149","errorBeacon":"bam.nr-data.net","applicationTime":62}</script>  
+ </body>
+</html>
